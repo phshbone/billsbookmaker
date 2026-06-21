@@ -8,25 +8,134 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b1410;--panel:#18231c;--panel2:#223128;--ink:#f6f7ff;--muted:#b7c2ba;--accent:#6a2337;--accent2:#4f7c57;--danger:#fb7185;--card:#fff7d6;--cardInk:#202124;--line:#7dd3fc;--radius:18px;--shadow:0 18px 50px rgba(0,0,0,.35)}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top,#2a3d31 0%,var(--bg) 48%,#050814 100%);color:var(--ink);height:100dvh;overflow:hidden}button,input,textarea,select{font:inherit}button{border:0;border-radius:13px;padding:10px 13px;background:var(--panel2);color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.08) inset}button:active{transform:scale(.98)}.primary{background:linear-gradient(135deg,var(--accent),#60a5fa)}.green{background:#065f46}.danger{background:#7f1d1d}.ghost{background:rgba(255,255,255,.08)}.app{height:100dvh;display:grid;grid-template-rows:auto 1fr auto;gap:10px;padding:env(safe-area-inset-top) 12px env(safe-area-inset-bottom)}header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 4px 0}h1{font-family:'Baumans',cursive;font-size:28px;margin:0;text-transform:lowercase;letter-spacing:.5px}.sub{color:var(--muted);font-size:12px;margin-top:3px}.toolRow{display:flex;gap:8px;flex-wrap:wrap}main{min-height:0;display:grid;grid-template-columns:260px 1fr 300px;gap:12px}.sidebar,.workspace,.rightbar{background:rgba(17,26,49,.84);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);min-height:0}.sidebar,.rightbar{padding:12px;overflow:auto}.workspace{display:grid;grid-template-rows:auto 1fr;overflow:hidden}.topbar{padding:12px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.topbar h2{margin:0;font-size:18px}.small,.hint{color:var(--muted);font-size:12px;line-height:1.35}.search{width:100%;padding:11px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#0b1227;color:var(--ink);margin:10px 0}.bucketList{display:flex;flex-direction:column;gap:8px}.bucket{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;border-radius:14px;background:rgba(255,255,255,.07);cursor:pointer}.bucket.active{outline:2px solid var(--accent);background:rgba(141,124,255,.18)}.cards{padding:14px;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;align-content:start}.card{background:var(--card);color:var(--cardInk);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.28);min-height:170px;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,.12)}.card:before{content:"";height:26px;border-bottom:2px solid rgba(50,80,140,.16);background:linear-gradient(to bottom,rgba(255,255,255,.55),transparent);border-radius:12px 12px 0 0}.cardHead{padding:10px 12px 2px}.cardTitle{font-weight:800;font-size:17px}.tag{display:inline-block;margin-top:6px;font-size:11px;background:rgba(0,0,0,.08);padding:4px 7px;border-radius:999px}.cardBody{padding:8px 12px 12px;white-space:pre-wrap;line-height:1.35;flex:1}.cardActions{display:flex;gap:6px;padding:8px;border-top:1px solid rgba(0,0,0,.08);flex-wrap:wrap}.cardActions button{font-size:12px;padding:7px 9px;background:rgba(0,0,0,.08);color:#111;box-shadow:none}.selected{outline:3px solid var(--accent2)}.relItem{padding:10px;border-radius:12px;background:rgba(255,255,255,.07);margin:8px 0}.relItem b{color:white}.relItem span{color:var(--muted)}.bottomBuckets{display:none}.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal.show{display:flex}.sheet{width:min(720px,100%);max-height:92dvh;overflow:auto;background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:22px;box-shadow:var(--shadow);padding:16px}.sheet.wide{width:min(1100px,100%);height:90dvh;display:grid;grid-template-rows:auto 1fr auto}.field{display:grid;gap:6px;margin:10px 0}.field label{font-size:12px;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid rgba(255,255,255,.12);background:#0b1227;color:var(--ink);border-radius:13px;padding:11px}.field textarea{min-height:130px;resize:vertical}.row{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.empty{color:var(--muted);padding:30px;text-align:center;grid-column:1/-1}.mapWrap{min-height:0;background:#060b16;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;position:relative}.mapHelp{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.45);padding:8px 10px;border-radius:12px;color:#dbeafe;font-size:12px;z-index:2}.node{cursor:grab}.node text{font-size:12px;font-weight:700;fill:white;text-anchor:middle;paint-order:stroke;stroke:#07111f;stroke-width:4px;stroke-linejoin:round}.node circle{filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}.edgeLabel{font-size:11px;fill:#dbeafe;text-anchor:middle;paint-order:stroke;stroke:#07111f;stroke-width:4px;stroke-linejoin:round}.linkLine{stroke:var(--line);stroke-width:2.2;opacity:.72}.bottomBuckets button.active{outline:2px solid var(--accent)}@media(max-width:980px){main{grid-template-columns:220px 1fr}.rightbar{display:none}}@media(max-width:760px){.app{padding-left:8px;padding-right:8px}main{grid-template-columns:1fr}.sidebar{display:none}.workspace{border-radius:16px}.bottomBuckets{display:flex;gap:8px;overflow:auto;padding:8px 0 10px}.bottomBuckets button{white-space:nowrap;min-width:max-content}.cards{grid-template-columns:1fr;padding:10px}.topbar{padding:10px}h1{font-size:20px}.card{min-height:155px}.two{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
+:root{--bg:#0d070a;--panel:#251018;--panel2:#26382b;--ink:#f7f5f2;--muted:#d1c1be;--accent:#7a263b;--accent2:#3f6f4b;--danger:#fb7185;--card:#fff7d6;--cardInk:#202124;--line:#7dd3fc;--radius:18px;--shadow:0 18px 50px rgba(0,0,0,.35)}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top,#24432e 0%,#17281d 22%,#2a111b 52%,#0d070a 100%);color:var(--ink);height:100dvh;overflow:hidden}button,input,textarea,select{font:inherit}button{border:0;border-radius:13px;padding:10px 13px;background:var(--panel2);color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.08) inset}button:active{transform:scale(.98)}.primary{background:linear-gradient(135deg,var(--accent),#60a5fa)}.green{background:#065f46}.danger{background:#7f1d1d}.ghost{background:rgba(255,255,255,.08)}.app{height:100dvh;display:grid;grid-template-rows:auto 1fr auto;gap:10px;padding:env(safe-area-inset-top) 12px env(safe-area-inset-bottom)}header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 4px 0}h1{font-family:'Baumans',cursive;font-size:28px;margin:0;text-transform:lowercase;letter-spacing:.5px}.sub{color:var(--muted);font-size:12px;margin-top:3px}.toolRow{display:flex;gap:8px;flex-wrap:wrap}main{min-height:0;display:grid;grid-template-columns:260px 1fr 300px;gap:12px}.sidebar,.workspace,.rightbar{background:rgba(17,26,49,.84);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);min-height:0}.sidebar,.rightbar{padding:12px;overflow:auto}.workspace{display:grid;grid-template-rows:auto 1fr;overflow:hidden}.topbar{padding:12px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.topbar h2{margin:0;font-size:18px}.small,.hint{color:var(--muted);font-size:12px;line-height:1.35}.search{width:100%;padding:11px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#0b1227;color:var(--ink);margin:10px 0}.bucketList{display:flex;flex-direction:column;gap:8px}.bucket{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;border-radius:14px;background:rgba(255,255,255,.07);cursor:pointer}.bucket.active{outline:2px solid var(--accent);background:rgba(141,124,255,.18)}.cards{padding:14px;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;align-content:start}.card{background:var(--card);color:var(--cardInk);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.28);min-height:170px;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,.12)}.card:before{content:"";height:26px;border-bottom:2px solid rgba(50,80,140,.16);background:linear-gradient(to bottom,rgba(255,255,255,.55),transparent);border-radius:12px 12px 0 0}.cardHead{padding:10px 12px 2px}.cardTitle{font-weight:800;font-size:17px}.tag{display:inline-block;margin-top:6px;font-size:11px;background:rgba(0,0,0,.08);padding:4px 7px;border-radius:999px}.cardBody{padding:8px 12px 12px;white-space:pre-wrap;line-height:1.35;flex:1}.cardActions{display:flex;gap:6px;padding:8px;border-top:1px solid rgba(0,0,0,.08);flex-wrap:wrap}.cardActions button{font-size:12px;padding:7px 9px;background:rgba(0,0,0,.08);color:#111;box-shadow:none}.selected{outline:3px solid var(--accent2)}.relItem{padding:10px;border-radius:12px;background:rgba(255,255,255,.07);margin:8px 0}.relItem b{color:white}.relItem span{color:var(--muted)}.bottomBuckets{display:none}.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal.show{display:flex}.sheet{width:min(720px,100%);max-height:92dvh;overflow:auto;background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:22px;box-shadow:var(--shadow);padding:16px}.sheet.wide{width:min(1100px,100%);height:90dvh;display:grid;grid-template-rows:auto 1fr auto}.field{display:grid;gap:6px;margin:10px 0}.field label{font-size:12px;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid rgba(255,255,255,.12);background:#0b1227;color:var(--ink);border-radius:13px;padding:11px}.field textarea{min-height:130px;resize:vertical}.row{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.empty{color:var(--muted);padding:30px;text-align:center;grid-column:1/-1}.mapWrap{min-height:0;background:#060b16;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;position:relative}.mapHelp{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.45);padding:8px 10px;border-radius:12px;color:#dbeafe;font-size:12px;z-index:2}.node{cursor:grab}.node text{font-size:12px;font-weight:700;fill:white;text-anchor:middle;paint-order:stroke;stroke:#07111f;stroke-width:4px;stroke-linejoin:round}.node circle{filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}.edgeLabel{font-size:11px;fill:#dbeafe;text-anchor:middle;paint-order:stroke;stroke:#07111f;stroke-width:4px;stroke-linejoin:round}.linkLine{stroke:var(--line);stroke-width:2.2;opacity:.72}.bottomBuckets button.active{outline:2px solid var(--accent)}@media(max-width:980px){main{grid-template-columns:220px 1fr}.rightbar{display:none}}@media(max-width:760px){.app{padding-left:8px;padding-right:8px}main{grid-template-columns:1fr}.sidebar{display:none}.workspace{border-radius:16px}.bottomBuckets{display:flex;gap:8px;overflow:auto;padding:8px 0 10px}.bottomBuckets button{white-space:nowrap;min-width:max-content}.cards{grid-template-columns:1fr;padding:10px}.topbar{padding:10px}h1{font-size:20px}.card{min-height:155px}.two{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
+
+.card{overflow:hidden;max-height:min(560px,calc(100dvh - 310px))}
+.cardBody{overflow:auto;min-height:0;overflow-wrap:anywhere;word-break:break-word;-webkit-overflow-scrolling:touch}
+.cardActions{position:sticky;bottom:0;background:rgba(255,247,214,.96);backdrop-filter:blur(4px);z-index:2}
+.sheet .row{position:sticky;bottom:-16px;background:linear-gradient(to top,var(--panel) 80%,rgba(25,31,26,0));padding-top:12px;padding-bottom:2px;z-index:5}
+@media(max-width:760px){
+  .card{max-height:44dvh}
+  .workspace{max-height:calc(100dvh - 250px)}
+  .cards{padding-bottom:18px}
+  .toolRow button{font-size:18px}
+  .topbar{align-items:flex-start}
+}
+
+
+header h1,.toolRow button,.bottomBuckets button,.topbar h2{font-family:'Baumans',system-ui,sans-serif;letter-spacing:.4px}
+.workspace,.rightbar,.sidebar{background:rgba(37,16,24,.88)}
+.topbar{background:rgba(24,44,31,.45)}
+.bucket.active,.bottomBuckets button.active{outline:2px solid var(--accent);box-shadow:0 0 0 3px rgba(122,38,59,.22)}
+
+
+.modeSwitch{display:flex;gap:6px;background:rgba(255,255,255,.08);padding:5px;border-radius:16px}
+.modeSwitch button{padding:8px 10px;font-family:'Baumans',system-ui,sans-serif}
+.modeSwitch button.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white}
+.helpFab{position:fixed;right:14px;bottom:calc(env(safe-area-inset-bottom) + 58px);z-index:8;width:46px;height:46px;border-radius:50%;font-family:'Baumans',system-ui,sans-serif;font-size:22px;background:linear-gradient(135deg,var(--accent2),var(--accent));box-shadow:0 12px 32px rgba(0,0,0,.35)}
+body.mode-story{--bg:#0d070a;--panel:#251018;--panel2:#26382b;--accent:#7a263b;--accent2:#3f6f4b}
+body.mode-app{--bg:#061015;--panel:#0f1f28;--panel2:#173326;--accent:#2563eb;--accent2:#3f6f4b}
+body.mode-story{background:radial-gradient(circle at top,#24432e 0%,#17281d 22%,#2a111b 52%,#0d070a 100%)}
+body.mode-app{background:radial-gradient(circle at top,#173e55 0%,#102a22 35%,#061015 100%)}
+
 </style>
 </head>
-<body>
+<body class="mode-story">
 <div class="app">
-<header><div><h1>bill's book maker</h1><div class="sub">characters, scenes, relationships, and story maps</div></div><div class="toolRow"><button class="primary" onclick="openCardModal()">+ card</button><button class="green" onclick="openRelModal()">+ relationship</button><button class="ghost" onclick="openMap()">story map</button><button class="ghost" onclick="openSummaryModal()">AI prompt</button><button class="ghost" onclick="newBook()">new book</button><button class="ghost" onclick="exportData()">export</button><button class="ghost" onclick="importData()">import</button></div></header>
+<header><div><h1>bill's book maker</h1><div class="sub">characters, scenes, relationships, and story maps</div></div><div class="modeSwitch"><button id="storyModeBtn" class="active" onclick="setMode('story')">storyboard</button><button id="appModeBtn" onclick="setMode('app')">app builder</button></div><div class="toolRow"><button class="primary" onclick="openCardModal()">+ card</button><button class="green" onclick="openRelModal()">+ relationship</button><button class="ghost" onclick="openMap()">story map</button><button class="ghost" onclick="openTreeModal()">app tree</button><button class="ghost" onclick="openSummaryModal()">AI prompt</button><button class="ghost" onclick="newBook()">new book</button><button class="ghost" onclick="exportData()">export</button><button class="ghost" onclick="importData()">import</button></div></header>
 <main>
 <aside class="sidebar"><button class="primary" style="width:100%" onclick="openBucketModal()">+ new bucket</button><input class="search" id="search" placeholder="search cards..." oninput="render()"><div class="bucketList" id="bucketList"></div><p class="hint">Use cards for characters, scenes, clues, arcs, jokes, quotes, settings, research, and loose ideas.</p></aside>
-<section class="workspace"><div class="topbar"><div><h2 id="bucketTitle"></h2><div id="bucketDesc" class="small"></div></div><div><button class="primary" onclick="openCardModal()">+ card</button> <button class="danger" onclick="deleteBucket()">delete bucket</button></div></div><div class="cards" id="cards"></div></section>
+<section class="workspace"><div class="topbar"><div><h2 id="bucketTitle"></h2><div id="bucketDesc" class="small"></div></div><div><button class="primary" onclick="openCardModal()">+ card</button> <button class="danger" onclick="deleteBucket()">delete drawer</button></div></div><div class="cards" id="cards"></div></section>
 <aside class="rightbar"><h3 style="margin-top:0">relationships</h3><div id="selectedInfo" class="hint">Select a card to see its connections.</div><div id="relList"></div><hr style="border-color:rgba(255,255,255,.08)"><button class="green" style="width:100%" onclick="openRelModal()">+ add relationship</button><button class="ghost" style="width:100%;margin-top:8px" onclick="openMap()">open story map</button><p class="hint">Examples: Mac → mentor → Colt. Ortega → controls → grow site. Paintball Scene → reveals → Mac’s leadership.</p></aside>
 </main><nav class="bottomBuckets" id="bottomBuckets"></nav>
+<button class="helpFab" onclick="openHelpMenu()">?</button>
 </div>
 
 <div class="modal" id="bucketModal"><div class="sheet"><h3>new bucket</h3><div class="field"><label>Bucket name</label><input id="bucketName" placeholder="Characters, Scenes, Junk Drawer..."></div><div class="field"><label>Description</label><input id="bucketDescription" placeholder="What belongs in this drawer?"></div><div class="row"><button onclick="closeModals()">cancel</button><button class="primary" onclick="saveBucket()">save bucket</button></div></div></div>
-<div class="modal" id="cardModal"><div class="sheet"><h3 id="cardModalTitle">new card</h3><input type="hidden" id="editingCardId"><div class="field"><label>Title</label><input id="cardTitleInput" placeholder="Mac, Uncle Colt, Chapter 1 opening..."></div><div class="field"><label>Type</label><select id="cardType"><option>character</option><option>scene</option><option>plot thread</option><option>line / backism</option><option>setting</option><option>research</option><option>junk drawer</option></select></div><div class="field"><label>Notes</label><textarea id="cardNotes" placeholder="Write the raw idea here. Messy is fine."></textarea></div><div class="row"><button onclick="closeModals()">cancel</button><button class="primary" onclick="saveCard()">save card</button></div></div></div>
+<div class="modal" id="cardModal"><div class="sheet"><h3 id="cardModalTitle">new card</h3><input type="hidden" id="editingCardId"><div class="field"><label>Title</label><input id="cardTitleInput" placeholder="Mac, Uncle Colt, Chapter 1 opening..."></div><div class="field"><label>Type</label><select id="cardType"><option>character</option><option>scene</option><option>plot thread</option><option>line / backism</option><option>setting</option><option>research</option><option>junk drawer</option><option>screen</option><option>component</option><option>navigation</option><option>feature</option><option>data</option><option>user flow</option></select></div><div class="field"><label>Notes</label><textarea id="cardNotes" placeholder="Write the raw idea here. Messy is fine."></textarea></div><div class="row"><button onclick="closeModals()">cancel</button><button class="primary" onclick="saveCard()">save card</button></div></div></div>
 <div class="modal" id="relModal"><div class="sheet"><h3>add relationship</h3><p class="hint">Make a connection between two cards. The label becomes the words on the line.</p><div class="two"><div class="field"><label>From</label><select id="relFrom"></select></div><div class="field"><label>To</label><select id="relTo"></select></div></div><div class="field"><label>Relationship label</label><input id="relLabel" placeholder="mentor, enemy, appears in, reveals, causes, protects..."></div><div class="field"><label>Note on this relationship</label><textarea id="relNote" placeholder="Why are these connected?"></textarea></div><div class="row"><button onclick="closeModals()">cancel</button><button class="primary" onclick="saveRelationship()">save relationship</button></div></div></div>
 <div class="modal" id="mapModal"><div class="sheet wide"><div class="topbar" style="padding:0 0 10px;border:0"><div><h3 style="margin:0">story map</h3><div class="hint">Drag the bubbles. Click one to focus its relationships.</div></div><div><button class="ghost" onclick="resetMapFocus()">show all</button><button onclick="closeModals()">close</button></div></div><div class="mapWrap"><div class="mapHelp">Circles are cards. Lines are relationships.</div><svg id="mapSvg" width="100%" height="100%"></svg></div><div class="hint" id="mapDetails" style="padding-top:10px">Select a node to inspect it.</div></div></div>
 <div class="modal" id="summaryModal"><div class="sheet"><h3>AI-ready prompt</h3><p class="hint">Copy this into ChatGPT, NotebookLM, Claude, Gemini, etc.</p><div class="field"><label>Generated prompt</label><textarea id="summaryOutput" style="min-height:320px;font-family:ui-monospace,Consolas,monospace;font-size:13px" readonly></textarea></div><div class="row"><button onclick="closeModals()">close</button><button class="primary" onclick="copySummary()">copy prompt</button></div></div></div>
+
+<div class="modal" id="treeModal"><div class="sheet"><h3>app tree</h3><p class="hint">A plain hierarchy view for app planning. It reads your cards and relationships and turns them into an AI-friendly structure.</p><div class="field"><label>Generated tree / app structure</label><textarea id="treeOutput" style="min-height:360px;font-family:ui-monospace,Consolas,monospace;font-size:13px" readonly></textarea></div><div class="row"><button onclick="closeModals()">close</button><button class="primary" onclick="copyTree()">copy tree</button></div></div></div>
+
+<div class="modal" id="termsModal"><div class="sheet"><h3>UI terms reference</h3><div class="hint" style="font-size:14px;line-height:1.55">
+<b>Screen / View:</b> A full page or major app area, like Home, Settings, Map, Dashboard.<br><br>
+<b>Panel:</b> A section inside a screen, often boxed off visually.<br><br>
+<b>Card:</b> A contained item with title, content, and actions.<br><br>
+<b>Drawer:</b> A slide-out or storage-style area that reveals extra content.<br><br>
+<b>Bottom tab bar:</b> Navigation along the bottom, usually for primary sections.<br><br>
+<b>Top nav / Header:</b> Branding and major actions at the top.<br><br>
+<b>Modal:</b> A pop-up dialog that temporarily covers the app.<br><br>
+<b>Sheet:</b> A mobile-style modal that slides up or appears as a panel.<br><br>
+<b>Toast:</b> A small temporary confirmation message.<br><br>
+<b>Stepper / Wizard:</b> A multi-step process like 1 → 2 → 3.<br><br>
+<b>Slider / Carousel:</b> A swipeable row of panels or cards.<br><br>
+<b>CTA:</b> Call-to-action button, like “Save,” “Start,” or “Export.”<br><br>
+<b>State:</b> What the app remembers: current book, active tab, saved cards, selected card.<br><br>
+<b>LocalStorage:</b> Browser-only save storage. Does not sync between iPhone and desktop.<br><br>
+<b>Single-file app:</b> One HTML file containing structure, style, and behavior.
+</div><div class="row"><button onclick="closeModals()">close</button></div></div></div>
+
+<div class="modal" id="hierarchyModal"><div class="sheet"><h3>app hierarchy help</h3><div class="hint" style="font-size:14px;line-height:1.55">
+Use this language when planning an app tree:<br><br>
+<b>App:</b> The whole product. Example: bill’s brain.<br><br>
+<b>Project / Book / Workspace:</b> A saved working set inside the app.<br><br>
+<b>Primary Sections:</b> Main tabs or drawers. Example: Calculator, Percentages, Conversions, Settings.<br><br>
+<b>Screens:</b> Individual pages or views inside each section.<br><br>
+<b>Components:</b> Reusable pieces like cards, forms, buttons, modals, drawers, tab bars.<br><br>
+<b>User Flow:</b> What happens in order. Example: Splash → Agreement → Instructions → Main Map.<br><br>
+<b>Data:</b> What must be saved. Example: cards, relationships, project name, settings.<br><br>
+<b>Actions:</b> What the user can do. Example: add card, connect card, export, import.<br><br>
+<b>Rules:</b> Logic the app must follow. Example: New Book clears cards and relationships but keeps default drawers.<br><br>
+<b>Suggested card structure:</b><br>
+1. Create one card for each screen.<br>
+2. Create one card for each important component.<br>
+3. Connect cards with labels like “opens,” “contains,” “saves,” “requires,” “leads to.”<br>
+4. Use the AI prompt button to export the build brief.
+</div><div class="row"><button onclick="closeModals()">close</button></div></div></div>
+
+
+<div class="modal" id="helpMenuModal"><div class="sheet"><h3>help</h3><p class="hint">Quick references so you can describe builds more clearly.</p><div class="bucketList">
+<button class="ghost" onclick="closeModals();openTermsModal()">UI terms</button>
+<button class="ghost" onclick="closeModals();openHierarchyModal()">app hierarchy</button>
+<button class="ghost" onclick="closeModals();openPromptHelpModal()">prompt structure</button>
+<button class="ghost" onclick="closeModals();openWorkflowHelpModal()">single HTML workflow</button>
+</div><div class="row" style="margin-top:12px"><button onclick="closeModals()">close</button></div></div></div>
+
+<div class="modal" id="promptHelpModal"><div class="sheet"><h3>prompt structure</h3><div class="hint" style="font-size:14px;line-height:1.55">
+Use this format when asking for app code:<br><br>
+<b>Goal:</b> What the app should do.<br>
+<b>Mode:</b> Storyboard, app builder, calculator, tracker, hub, etc.<br>
+<b>Screens:</b> List every major screen/view.<br>
+<b>Navigation:</b> How users move between screens.<br>
+<b>Components:</b> Cards, modals, drawers, tab bars, sliders, forms.<br>
+<b>Saved Data:</b> What must persist after closing the app.<br>
+<b>Actions:</b> Add, edit, delete, export, import, reset, save.<br>
+<b>Style:</b> Colors, font, mood, layout preferences.<br>
+<b>Delivery:</b> Single HTML file for GitHub Pages.<br><br>
+Example:<br>
+“Build a single-file HTML PWA with a bottom tab bar, four sections, localStorage save, import/export JSON, and large mobile-friendly buttons.”
+</div><div class="row"><button onclick="closeModals()">close</button></div></div></div>
+
+<div class="modal" id="workflowHelpModal"><div class="sheet"><h3>single HTML workflow</h3><div class="hint" style="font-size:14px;line-height:1.55">
+Your simple workflow:<br><br>
+1. Build or edit one HTML file.<br>
+2. Save it as <b>index.html</b>.<br>
+3. Upload/replace it in GitHub.<br>
+4. Commit changes.<br>
+5. GitHub Pages serves the updated app.<br><br>
+Current data workflow:<br>
+- App data saves locally in each browser/device.<br>
+- Export JSON before switching projects/devices.<br>
+- Import JSON to restore that project.<br><br>
+What requires a backend later:<br>
+- Automatic iPhone/desktop sync.<br>
+- Google Drive auto-save/load.<br>
+- Real built-in AI with protected API keys.
+</div><div class="row"><button onclick="closeModals()">close</button></div></div></div>
+
 <input id="importFile" type="file" accept="application/json" style="display:none">
 
 <script>
@@ -42,8 +151,26 @@ function renderCards(){let q=(search?.value||'').toLowerCase();let list=state.ca
 function selectCard(id){selectedCardId=id;render();}
 function renderRelations(){let c=card(selectedCardId);selectedInfo.innerHTML=c?`<b>${esc(c.title)}</b><br>${esc(c.type)}<br><br>${esc(c.notes||'')}`:'Select a card.';let rels=state.links.filter(l=>l.from===selectedCardId||l.to===selectedCardId);relList.innerHTML=rels.length?rels.map(l=>{let a=card(l.from),b=card(l.to);return `<div class="relItem"><b>${esc(a?.title||'?')}</b> <span>— ${esc(l.label||'connected to')} —</span> <b>${esc(b?.title||'?')}</b><br><span>${esc(l.note||'')}</span><br><button style="margin-top:8px" class="danger" onclick="deleteRel('${l.id}')">delete</button></div>`}).join(''):'<p class="hint">No relationships yet for this card.</p>'}
 function openBucketModal(){bucketName.value='';bucketDescription.value='';bucketModal.classList.add('show');setTimeout(()=>bucketName.focus(),50)}function saveBucket(){let name=bucketName.value.trim();if(!name)return;let b={id:uid(),name,desc:bucketDescription.value.trim()};state.buckets.push(b);currentBucketId=b.id;closeModals();render()}
-function deleteBucket(){if(state.buckets.length<2)return alert('Keep at least one bucket.');let b=bucket(currentBucketId);if(!confirm(`Delete bucket “${b.name}” and its cards?`))return;let doomed=state.cards.filter(c=>c.bucketId===currentBucketId).map(c=>c.id);state.cards=state.cards.filter(c=>c.bucketId!==currentBucketId);state.links=state.links.filter(l=>!doomed.includes(l.from)&&!doomed.includes(l.to));currentBucketId=state.buckets.find(x=>x.id!==currentBucketId).id;state.buckets=state.buckets.filter(x=>x.id!==b.id);selectedCardId=state.cards[0]?.id||null;render()}
-function openCardModal(){editingCardId.value='';cardModalTitle.textContent='new card';cardTitleInput.value='';cardType.value='character';cardNotes.value='';cardModal.classList.add('show');setTimeout(()=>cardTitleInput.focus(),50)}
+function deleteBucket(){if(state.buckets.length<2)return alert('Keep at least one bucket.');let b=bucket(currentBucketId);if(!confirm(`Delete drawer “${b.name}” and its cards? This is not the same as New Book.`))return;let doomed=state.cards.filter(c=>c.bucketId===currentBucketId).map(c=>c.id);state.cards=state.cards.filter(c=>c.bucketId!==currentBucketId);state.links=state.links.filter(l=>!doomed.includes(l.from)&&!doomed.includes(l.to));currentBucketId=state.buckets.find(x=>x.id!==currentBucketId).id;state.buckets=state.buckets.filter(x=>x.id!==b.id);selectedCardId=state.cards[0]?.id||null;render()}
+
+function guessTypeFromBucket(){
+ let b=(bucket(currentBucketId)?.name||'').toLowerCase();
+ if(b.includes('scene'))return 'scene';
+ if(b.includes('plot')||b.includes('thread')||b.includes('arc'))return 'plot thread';
+ if(b.includes('line')||b.includes('backism')||b.includes('quote'))return 'line / backism';
+ if(b.includes('setting')||b.includes('world'))return 'setting';
+ if(b.includes('research'))return 'research';
+ if(b.includes('screen')||b.includes('page')||b.includes('view'))return 'screen';
+ if(b.includes('component')||b.includes('ui'))return 'component';
+ if(b.includes('feature'))return 'feature';
+ if(b.includes('flow'))return 'user flow';
+ if(b.includes('data'))return 'data';
+ if(b.includes('nav')||b.includes('tab'))return 'navigation';
+ if(b.includes('junk')||b.includes('idea'))return 'junk drawer';
+ return 'character';
+}
+
+function openCardModal(){editingCardId.value='';cardModalTitle.textContent='new card';cardTitleInput.value='';cardType.value=guessTypeFromBucket();cardNotes.value='';cardModal.classList.add('show');setTimeout(()=>cardTitleInput.focus(),50)}
 function editCard(id){let c=card(id);editingCardId.value=id;cardModalTitle.textContent='edit card';cardTitleInput.value=c.title;cardType.value=c.type;cardNotes.value=c.notes||'';cardModal.classList.add('show')}
 function saveCard(){let title=cardTitleInput.value.trim();if(!title)return;let id=editingCardId.value;if(id){let c=card(id);c.title=title;c.type=cardType.value;c.notes=cardNotes.value.trim()}else{let c={id:uid(),bucketId:currentBucketId,title,type:cardType.value,notes:cardNotes.value.trim()};state.cards.push(c);selectedCardId=c.id}closeModals();render()}
 function deleteCard(id){let c=card(id);if(!confirm(`Delete card “${c.title}”?`))return;state.cards=state.cards.filter(x=>x.id!==id);state.links=state.links.filter(l=>l.from!==id&&l.to!==id);if(selectedCardId===id)selectedCardId=state.cards[0]?.id||null;render()}
@@ -57,8 +184,81 @@ function drawMap(){let svg=mapSvg;let box=svg.getBoundingClientRect();let w=box.
 function line(svg,x1,y1,x2,y2,cls){let e=document.createElementNS('http://www.w3.org/2000/svg','line');e.setAttribute('x1',x1);e.setAttribute('y1',y1);e.setAttribute('x2',x2);e.setAttribute('y2',y2);e.setAttribute('class',cls);svg.appendChild(e)}function text(svg,x,y,s,cls){let e=document.createElementNS('http://www.w3.org/2000/svg','text');e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('class',cls);e.textContent=s;svg.appendChild(e)}
 function node(svg,n){let g=document.createElementNS('http://www.w3.org/2000/svg','g');g.setAttribute('class','node');g.setAttribute('transform',`translate(${n.x},${n.y})`);let circle=document.createElementNS('http://www.w3.org/2000/svg','circle');circle.setAttribute('r',typeRadius(n.c.type));circle.setAttribute('fill',typeColor(n.c.type));circle.setAttribute('stroke',n.id===mapFocus?'#34d399':'rgba(255,255,255,.85)');circle.setAttribute('stroke-width',n.id===mapFocus?'4':'1.5');let t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('y','4');t.textContent=short(n.c.title,16);g.append(circle,t);g.addEventListener('click',e=>{if(drag)return;mapFocus=n.id;drawMap()});g.addEventListener('pointerdown',e=>{drag={id:n.id,dx:e.clientX-n.x,dy:e.clientY-n.y};g.setPointerCapture(e.pointerId)});g.addEventListener('pointermove',e=>{if(!drag||drag.id!==n.id)return;let c=card(n.id);c.x=e.clientX-drag.dx;c.y=e.clientY-drag.dy;drawMap()});g.addEventListener('pointerup',e=>{drag=null;save()});svg.appendChild(g)}
 function typeColor(type){return {'character':'#7c3aed','scene':'#0369a1','plot thread':'#047857','line / backism':'#be123c','setting':'#92400e','research':'#475569','junk drawer':'#6b7280'}[type]||'#6366f1'}function typeRadius(type){return type==='character'?42:type==='scene'?38:34}function short(s,n){return s.length>n?s.slice(0,n-1)+'…':s}
-function openSummaryModal(){summaryOutput.value=buildPrompt();summaryModal.classList.add('show')}function buildPrompt(){let out='Use the following story board to help me develop the novel. Preserve relationships, point out gaps, and help me organize next steps.\n\nBUCKETS AND CARDS\n';state.buckets.forEach(b=>{out+=`\n## ${b.name}\n${b.desc||''}\n`;state.cards.filter(c=>c.bucketId===b.id).forEach(c=>{out+=`\n- ${c.title} [${c.type}]\n  ${c.notes||''}\n`})});out+='\nRELATIONSHIP MAP\n';state.links.forEach(l=>{let a=card(l.from),b=card(l.to);out+=`- ${a?.title||'?'} -- ${l.label||'connected to'} -- ${b?.title||'?'}${l.note?' | '+l.note:''}\n`});return out}function copySummary(){summaryOutput.select();document.execCommand('copy')}
-function exportData(){let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='story-drawer-backup.json';a.click();URL.revokeObjectURL(a.href)}function importData(){importFile.click()}importFile.addEventListener('change',async e=>{let f=e.target.files[0];if(!f)return;try{state=JSON.parse(await f.text());currentBucketId=state.buckets[0]?.id;selectedCardId=state.cards[0]?.id;render()}catch(err){alert('That file did not import correctly.')}});
+
+
+function setMode(mode){
+ localStorage.setItem('bbm.mode',mode);
+ document.body.classList.toggle('mode-story',mode==='story');
+ document.body.classList.toggle('mode-app',mode==='app');
+ if(document.getElementById('storyModeBtn')) storyModeBtn.classList.toggle('active',mode==='story');
+ if(document.getElementById('appModeBtn')) appModeBtn.classList.toggle('active',mode==='app');
+ let sub=document.querySelector('.sub');
+ if(sub) sub.textContent=mode==='app'?'screens, components, flows, and app trees':'characters, scenes, relationships, and story maps';
+}
+function initMode(){setMode(localStorage.getItem('bbm.mode')||'story')}
+function openHelpMenu(){helpMenuModal.classList.add('show')}
+function openPromptHelpModal(){promptHelpModal.classList.add('show')}
+function openWorkflowHelpModal(){workflowHelpModal.classList.add('show')}
+
+function openTermsModal(){termsModal.classList.add('show')}
+function openHierarchyModal(){hierarchyModal.classList.add('show')}
+function openTreeModal(){treeOutput.value=buildTree();treeModal.classList.add('show')}
+function copyTree(){treeOutput.select();document.execCommand('copy')}
+
+function buildTree(){
+ let out='APP TREE / STRUCTURE VIEW\n\n';
+ out+='Use this as a screen-flow and hierarchy reference. Cards are grouped by drawer/bucket. Relationships describe how screens, features, or story pieces connect.\n\n';
+ state.buckets.forEach(b=>{
+  out+=`${b.name}\n`;
+  let cards=state.cards.filter(c=>c.bucketId===b.id);
+  if(!cards.length){out+='  - No cards yet.\n';return}
+  cards.forEach(c=>{
+   out+=`  - ${c.title} [${c.type}]\n`;
+   if(c.notes) out+=`    Notes: ${c.notes.replace(/\n/g,' ')}\n`;
+   let outgoing=state.links.filter(l=>l.from===c.id);
+   outgoing.forEach(l=>{
+    let target=card(l.to);
+    out+=`    -> ${l.label||'connects to'} -> ${target?.title||'Unknown'}${l.note?' | '+l.note:''}\n`;
+   });
+  });
+  out+='\n';
+ });
+ return out;
+}
+
+function openSummaryModal(){summaryOutput.value=buildPrompt();summaryModal.classList.add('show')}function buildPrompt(){
+let out='You are helping me build or organize a single-file HTML app or story/project system from the structure below.\n';
+out+='Use the cards, buckets, relationships, and hierarchy to produce a clear build plan. If this is an app, translate the structure into screens, components, data, user flows, and UI behavior. If this is a story, translate it into characters, scenes, plot threads, and unresolved gaps.\n\n';
+out+='IMPORTANT OUTPUT REQUESTS:\n';
+out+='1. Summarize the overall concept.\n';
+out+='2. Identify the main screens/sections/drawers.\n';
+out+='3. Describe the navigation flow from opening screen to each major section.\n';
+out+='4. List reusable UI components such as cards, modals, drawers, tab bars, sliders, forms, and buttons.\n';
+out+='5. List what data must be saved locally.\n';
+out+='6. Point out missing screens, unclear relationships, or broken logic.\n';
+out+='7. If asked to code, produce a single-file HTML/CSS/JS version with no external build tools unless absolutely necessary.\n\n';
+out+='BUCKETS / DRAWERS / SECTIONS\n';
+state.buckets.forEach(b=>{
+ out+=`\n## ${b.name}\n${b.desc||''}\n`;
+ state.cards.filter(c=>c.bucketId===b.id).forEach(c=>{
+  out+=`\n- ${c.title} [${c.type}]\n  Notes: ${(c.notes||'').replace(/\n/g,' ')}\n`;
+  let outgoing=state.links.filter(l=>l.from===c.id);
+  outgoing.forEach(l=>{
+   let target=card(l.to);
+   out+=`  Relationship: ${c.title} -- ${l.label||'connected to'} -- ${target?.title||'?'}${l.note?' | '+l.note:''}\n`;
+  });
+ });
+});
+out+='\nFULL RELATIONSHIP LIST\n';
+state.links.forEach(l=>{
+ let a=card(l.from),b=card(l.to);
+ out+=`- ${a?.title||'?'} -- ${l.label||'connected to'} -- ${b?.title||'?'}${l.note?' | '+l.note:''}\n`;
+});
+out+='\nAPP TREE / HIERARCHY VIEW\n';
+out+=buildTree();
+return out
+}function copySummary(){summaryOutput.select();document.execCommand('copy')}
+function exportData(){let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='bills-book-maker-backup.json';a.click();URL.revokeObjectURL(a.href)}function importData(){importFile.click()}importFile.addEventListener('change',async e=>{let f=e.target.files[0];if(!f)return;try{state=JSON.parse(await f.text());currentBucketId=state.buckets[0]?.id;selectedCardId=state.cards[0]?.id;render()}catch(err){alert('That file did not import correctly.')}});
 
 function newBook(){
  if(!confirm('Start a new book? Export first if you want to keep the current project.')) return;
@@ -79,7 +279,7 @@ function newBook(){
 }
 
 function esc(s){return String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
-window.addEventListener('resize',()=>{if(mapModal.classList.contains('show'))drawMap()});render();
+window.addEventListener('resize',()=>{if(mapModal.classList.contains('show'))drawMap()});initMode();render();
 </script>
 </body>
 </html>
